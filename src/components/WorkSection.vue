@@ -27,4 +27,15 @@ div {
   margin: 100px 0;
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  div {
+    margin: 120px 0;
+  }
+}
 </style>
