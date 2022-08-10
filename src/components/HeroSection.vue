@@ -18,7 +18,6 @@ export default {
 
 <style scoped>
 div {
-  padding-bottom: 32px;
 }
 
 h1 {
@@ -35,5 +34,11 @@ p {
   margin-right: auto;
   width: 80%;
   text-align: center;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 44px;
+    line-height: 56px;
+  }
 }
 </style>
