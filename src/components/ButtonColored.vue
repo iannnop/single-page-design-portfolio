@@ -26,4 +26,11 @@
   cursor: pointer;
 }
 
+@media (min-width: 1440px) {
+  .btn {
+    align-self: center;
+    padding: 14px 45px;
+  }
+}
+
 </style>
