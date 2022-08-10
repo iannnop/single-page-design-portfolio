@@ -39,8 +39,8 @@ img {
 
 .grid {
   display: grid;
-  grid-template-columns: 2;
-  grid-template-rows: repeat(6, 182px) ;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-template-areas: 
   'a a'
   'a a'
@@ -93,5 +93,31 @@ img {
 .grid-text {
   color: #FFFFFF;
   font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    margin: 64px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    'a a b c'
+    'a a d d'
+    'e e f f';
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 182px 158px;
+    grid-template-areas: 
+    'a a b c e e'
+    'a a d d f f';
+    gap: 24px;
+  }
 }
 </style>
