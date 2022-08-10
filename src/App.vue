@@ -1,47 +1,56 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HeroSection from './components/HeroSection.vue'
+import AboutSection from './components/AboutSection.vue'
+import ButtonBlack from './components/ButtonBlack.vue'
+import CallToAction from './components/CallToAction.vue';
+import WorkSection from './components/WorkSection.vue';
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <ButtonBlack />
   </header>
 
   <main>
-    <TheWelcome />
+    <HeroSection />
+    <AboutSection />
+    <WorkSection />
+    <CallToAction />
   </main>
+
+  <footer>
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="64" height="64" />
+
+    <ButtonBlack />
+  </footer>
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+main {
+  padding: 32px 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  width: 48px;
+  height: 48px;
 }
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
   }
 }
 </style>
