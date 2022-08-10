@@ -5,14 +5,6 @@
   margin: 0 auto;
   padding: 16px;
   font-weight: normal;
-  overflow: hidden;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
 
 @font-face {
@@ -24,16 +16,8 @@ a,
   src: local("Plus Jakarta Sans"), url("/fonts/PlusJakartaSans-Medium.woff2") format("woff2"), url("/fonts/PlusJakartaSans-Medium.woff") format("woff");
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-  }
-
+@media (min-width: 768px) {
   #app {
+    padding: 40px;
   }
 }
