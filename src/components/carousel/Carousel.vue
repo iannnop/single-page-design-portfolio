@@ -19,7 +19,14 @@ export default {
         "src/assets/image-slide-2.jpg",
       ],
       slideIndex: 0,
+      slideWidth: window.innerWidth >= 768 ? 570 : 285
     }
+  },
+  created() {
+  window.addEventListener("resize", this.calculateSlide);
+  },
+  destroyed() {
+  window.removeEventListener("resize", this.calculateSlide);
   },
   methods: {
     moveSlide(direction) {
@@ -28,6 +35,9 @@ export default {
       } else {
         this.slideIndex += direction
       }
+    },
+    calculateSlide(e) {
+      this.slideWidth = window.innerWidth >= 768 ? 570 : 285
     }
   },
 }
@@ -36,7 +46,7 @@ export default {
 <template>
   <div class="carousel"
     :style="{ 
-      transform: `translateX(${-slideIndex * (270 + 15)}px)`
+      transform: `translateX(${-slideIndex * (slideWidth)}px)`
     }"
     @transitionend="adjustSlide()"
   >
@@ -61,7 +71,6 @@ export default {
   display: flex;
   justify-content: center;
   gap: 15px;
-  /* overflow: hidden; */
 }
 
 button {
@@ -76,5 +85,15 @@ button {
 button:hover {
   background-color: var(--galactic-blue);
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    margin: 56px 0;
+  }
+
+  .carousel-inner {
+    gap: 30px;
+  }
 }
 </style>

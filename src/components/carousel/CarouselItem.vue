@@ -11,8 +11,6 @@ export default {
 </template>
 
 <style scoped>
-.carousel-item {
-}
 
 img {
   width: 270px;
@@ -20,4 +18,11 @@ img {
   flex: 1 0 100%;
   border-radius: 10px;
 }
+
+@media (min-width: 768px) {
+  img {
+    width: 540px;
+  }
+}
+
 </style>
